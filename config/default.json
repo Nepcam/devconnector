@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://cam123:cam123@devconnector.tgi8j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "1ebdbc598210ef270313",
+  "githubSecret": "ede4faa84e58c9d4b3e5a71dc1dba3877d4d4553"
 }
