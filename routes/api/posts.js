@@ -82,11 +82,16 @@ router.get('/:id', auth, async (req, res) => {
 });
 
 // @route   DELETE api/posts/:id
-// @desc    Delete a posts
+// @desc    Delete a post
 // @access  Private
 router.delete('/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
+
+    // Check if post is there
+    if (!post) {
+      return res.status(404).json({ msg: 'Post not found' });
+    }
 
     // Check user
     if (post.user.toString() !== req.user.id) {
