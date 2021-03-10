@@ -49,7 +49,7 @@ const AddEducation = ({ addEducation, history }) => {
           <input
             type='text'
             placeholder='* School or Bootcamp'
-            name='title'
+            name='school'
             value={school}
             onChange={(e) => onChange(e)}
             required
