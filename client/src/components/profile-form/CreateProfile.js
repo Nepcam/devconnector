@@ -47,16 +47,16 @@ const CreateProfile = ({ createProfile, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Create Your Profile</h1>
+      <h1 className='large text-primary'>Create Student Profile</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Let's get some information to make your
-        profile stand out
+        students profile stand out
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <select name='status' values={status} onChange={(e) => onChange(e)}>
-            <option value='0'>* Select Professional Status</option>
+            <option value='0'>* Select Status</option>
             <option value='Developer'>Developer</option>
             <option value='Junior Developer'>Junior Developer</option>
             <option value='Senior Developer'>Senior Developer</option>
@@ -102,9 +102,7 @@ const CreateProfile = ({ createProfile, history }) => {
             value={location}
             onChange={(e) => onChange(e)}
           />
-          <small className='form-text'>
-            City & state suggested (eg. Boston, MA)
-          </small>
+          <small className='form-text'>City (eg. Gisborne)</small>
         </div>
         <div className='form-group'>
           <input

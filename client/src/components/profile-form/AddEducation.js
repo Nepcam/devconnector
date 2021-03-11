@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile';
@@ -32,10 +32,10 @@ const AddEducation = ({ addEducation, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Add Your Education</h1>
+      <h1 className='large text-primary'>Add Student Info</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch'></i> Add any school or bootcamp that
-        you have attended
+        <i className='fas fa-code-branch'></i> Add student information that has
+        registered
       </p>
       <small>* = required field</small>
       <form
@@ -48,7 +48,7 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* School or Bootcamp'
+            placeholder='* School'
             name='school'
             value={school}
             onChange={(e) => onChange(e)}
@@ -58,7 +58,7 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Degree or Certificate'
+            placeholder='* Course Level'
             name='degree'
             value={degree}
             onChange={(e) => onChange(e)}
@@ -68,7 +68,7 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Field of Study'
+            placeholder='Subject'
             name='fieldofstudy'
             value={fieldofstudy}
             onChange={(e) => onChange(e)}
@@ -119,9 +119,9 @@ const AddEducation = ({ addEducation, history }) => {
           ></textarea>
         </div>
         <input type='submit' className='btn btn-primary my-1' />
-        <Link className='btn btn-light my-1' href='dashboard.html'>
+        <a className='btn btn-light my-1' href='dashboard.html'>
           Go Back
-        </Link>
+        </a>
       </form>
     </Fragment>
   );
@@ -131,4 +131,4 @@ AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addEducation })(AddEducation);
+export default connect(null, { addEducation })(withRouter(AddEducation));

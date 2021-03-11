@@ -45,7 +45,7 @@ const EditProfile = ({
       instagram: loading || !profile.social ? '' : profile.social.instagram,
       facebook: loading || !profile.social ? '' : profile.social.facebook,
     });
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
 
   const {
     company,
@@ -72,10 +72,10 @@ const EditProfile = ({
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Create Your Profile</h1>
+      <h1 className='large text-primary'>Create Student Profile</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Let's get some information to make your
-        profile stand out
+        students profile stand out
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={(e) => onSubmit(e)}>
@@ -92,13 +92,13 @@ const EditProfile = ({
             <option value='Other'>Other</option>
           </select>
           <small className='form-text'>
-            Give us an idea of where you are at in your career
+            Give us an idea of where you want to be in your career
           </small>
         </div>
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Company'
+            placeholder='* School'
             name='company'
             value={company}
             onChange={(e) => onChange(e)}
@@ -127,9 +127,7 @@ const EditProfile = ({
             value={location}
             onChange={(e) => onChange(e)}
           />
-          <small className='form-text'>
-            City & state suggested (eg. Boston, MA)
-          </small>
+          <small className='form-text'>City (eg. Auckland)</small>
         </div>
         <div className='form-group'>
           <input
