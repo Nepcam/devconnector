@@ -8,7 +8,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Students</Link>
+        <Link to='/profiles'>Developers</Link>
       </li>
       <li>
         <Link to='/dashboard'>
@@ -28,7 +28,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Students</Link>
+        <Link to='/profiles'>Developers</Link>
       </li>
       <li>
         <Link to='/register'>Register</Link>
@@ -43,7 +43,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-gamepad'></i> Level Up Works
+          <i className='fas fa-code'></i> DevConnect
         </Link>
       </h1>
       {!loading && (
